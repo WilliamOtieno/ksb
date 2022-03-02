@@ -1,0 +1,282 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{% static 'core/mystyles.css' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="whole-page">
+        <div class="first-row">
+            <div class="company-details-column">
+
+                <p>
+                    <span class="ksb-name-span">KSB </span><span class="supreme-span">Supreme </span>
+                    <span class="ksb-name-span">Serv </span>
+                </p>
+                <div>
+                    Prabhaki Industrial Park
+                </div>
+                <div>
+                    Units A2 & B3
+                </div>
+                <div>
+                    Off Babadogo Road, Ruaraka
+                </div>
+                <div>
+                    P.O.Box 2286-00621
+                </div>
+                <div>
+                    Village Market, Nairobi, Kenya
+                </div>
+                <div>
+                    Tel (02) 234 9308
+                </div>
+
+
+            </div>
+            <div style="display: flex;justify-content: center;">
+                <img class="logo" src="{% static 'core/ksb-1-logo-png-transparent.png' %}">
+
+            </div>
+            <div class="job-number-section">
+
+                <div style="align-items: flex-end;display: flex;flex-direction: column;padding: 12px;">
+                    <div>
+                        <span class="serial-number-span">S/N </span><span class="serial-number"> 0392 </span>
+                    </div>
+                </div>
+
+                <div class="daily-worksheet-title">
+                    DAILY WORKSHEET
+                </div>
+                <div class="job-number-date-columns">
+                    <div class="job-number-date-titles">
+                        <div class="job-no-title-txt">
+                            Job Number
+                        </div>
+                        <div class="job-no-title-txt">
+                            Date
+                        </div>
+                    </div>
+                    <div class="job-number-date-values">
+                        <div class="job-no-val-txt">
+                            {{ obj.job_number }}
+                        </div>
+                        <div class="job-no-val-txt">
+                            {{ obj.date }}
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="second-row">
+            <div class="client-details-titles">
+                <div class="coloured-header">
+                    Client
+                </div>
+                <div class="coloured-header">
+                    Client Contact
+                </div>
+                <div class="coloured-header">
+                    Site Location
+                </div>
+                <div class="coloured-header">
+                    Vehicle Number Plate
+                </div>
+            </div>
+            <div class="client-details-values">
+                <div class="autofilled-vals">
+                    {{ obj.client_org }}
+                </div>
+                <div class="autofilled-vals">
+                    0712345678
+                </div>
+                <div class="autofilled-vals">
+                    {{ obj.location }}
+                </div>
+                <div class="autofilled-vals">
+                    {{ obj.vehicle_reg }}
+                </div>
+            </div>
+            <div class="engineer-details-titles">
+                <div class="coloured-header">
+                    Engineer
+                </div>
+                <div class="coloured-header">
+                    Department
+                </div>
+                <div class="coloured-header">
+                    Engineer&#39s Contact
+                </div>
+                <div class="coloured-header">
+                    Other Places Visited
+                </div>
+            </div>
+            <div class="engineer-details-values">
+                <div class="autofilled-vals">
+                    {{ obj.engineer }}
+                </div>
+                <div class="autofilled-vals">
+                    {{ obj.department }}
+                </div>
+                <div class="autofilled-vals">
+                    078945612
+                </div>
+                <div class="autofilled-vals">
+                    Nyamira, Keroka
+                </div>
+            </div>
+        </div >
+        <div class="third-row">
+            <div class="start-titles">
+                <div class="coloured-header">
+                    Arrival Time
+                </div>
+                <div class="coloured-header">
+                    Start Mileage
+                </div>
+            </div>
+            <div class="start-values">
+                <div class="autofilled-vals">
+                    {{ obj.arrival_time }}
+                </div>
+                <div class="autofilled-vals">
+                    {{ obj.start_mileage }} km
+                </div>
+
+            </div>
+            <div class="end-titles">
+                <div class="coloured-header">
+                    Departure Time
+                </div>
+                <div class="coloured-header">
+                    End Mileage
+                </div>
+            </div>
+            <div class="end-values">
+                <div class="autofilled-vals">
+                    {{ obj.departure_time }}
+                </div>
+                <div class="autofilled-vals">
+                    {{ obj.end_mileage }} km
+                </div>
+
+            </div>
+            <div class="difference-titles">
+                <div class="coloured-header">
+                    Time Spent
+                </div>
+                <div class="coloured-header">
+                    Total Distance
+                </div>
+            </div>
+            <div class="difference-values">
+                <div class="autofilled-vals">
+                    15 hrs
+                </div>
+                <div class="autofilled-vals">
+                    {{ obj.get_distance }} km
+                </div>
+
+            </div>
+        </div>
+        <div class="forth-row">
+            <div class='reports-column'>
+                <div class='report-column'>
+                    <div class="coloured-header">
+                        Report
+                    </div>
+                    <div class="lorem-text" style="height: 80px;">
+                        {{ obj.report }}.
+                    </div>
+                </div>
+                <div class='report-column'>
+                    <div class="coloured-header">
+                        Recommendations
+                    </div>
+                    <div class="lorem-text" style="height: 80px;">
+                        {{ obj.recommendation }}
+                    </div>
+                </div>
+                <div class='report-column'>
+                    <div class="coloured-header">
+                        Action Work Required
+                    </div>
+                    <div class="lorem-text" style="height: 80px;">
+                        {{ obj.action_work_required }}
+                    </div>
+                </div>
+                <div class='report-column'>
+                    <div class="coloured-header">
+                        Photos
+                    </div>
+                    <div name="photos" style="display: flex;flex-direction: row;">
+                        <div>
+                            <div style="padding: 15px;">
+                                <img class="photo" src="{% static 'core/ksb-1-logo-png-transparent.png' %}">
+                            </div>
+
+                        </div>
+                        <div>
+                            <div style="padding: 15px;">
+                                <img class="photo" src="{{ obj.work_sheet_images.url }}">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="signature-row">
+            <div class='report-column'>
+                <div class="coloured-header">
+                    Signatures
+                </div>
+                <div name="signature-columns" style="display: flex;justify-content: space-around;">
+
+
+                    <div style="padding: 2px;flex-direction: column;display: flex;align-items: center;">
+                        <img class="signature" src="{% static 'core/ksb-1-logo-png-transparent.png '%}">
+                        <div style="font-weight: 500;">
+                            KSB Engineer
+                        </div>
+                        <div style="font-weight: bold;">
+                            {{ obj.engineer }}
+                        </div>
+                    </div>
+                    <div style="padding: 2px;flex-direction: column;display: flex;align-items: center;">
+                        <img class="signature" src="{% static 'core/ksb-1-logo-png-transparent.png '%}">
+                        <div style="font-weight: 500;">
+                            Client Representative
+                        </div>
+                        <div style="font-weight: bold;">
+                            {{ obj.client }}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+
+</body>
+
+</html>
